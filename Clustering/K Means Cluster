@@ -1,1 +1,7 @@
-Lets
+#Reading File
+library(readr)
+dataku<- read_csv("C:/Users/HP PC/Downloads/4. cluster/datasets_42674_74935_Mall_Customers.csv")
+dataku=dataku[,c(3:5)]
+View(dataku)
+colnames(dataku)=c("Age","Income","Spending")
+View(dataku)
