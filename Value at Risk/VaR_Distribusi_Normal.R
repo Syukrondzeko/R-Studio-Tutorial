@@ -9,7 +9,7 @@ View(RTLKM)
 data=RTLKM$`r(TLKM)`
 n=length(data)
 
-#VaR Z dan T
+#VaR Z
 m=mean(data)
 s=sd(data)
 z=qnorm(0.05)
