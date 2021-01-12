@@ -1,0 +1,18 @@
+library(arules)
+library(arulesViz)
+data("Groceries")
+str(Groceries)
+inspect(Groceries)
+?apriori
+gr_rules<-apriori(Groceries)
+gr_rules<-apriori(Groceries,parameter=list(supp=0.01,conf=0.8))
+gr_rules<-apriori(Groceries,parameter=list(supp=0.001,conf=0.8))
+inspect(gr_rules[1:5])
+inspect(gr_rules[1:10])
+gr_rules<-sort(gr_rules,by="support",decreasing = T)
+inspect(gr_rules[1:10])
+gr_rules_beer<-apriori(Groceries,parameter=list(supp=0.001,conf=.008),appearance=list(default="rhs",lhs="bottled beer"))
+inspect(gr_rules_beer[1:5])
+plot(gr_rules,method="graph")
+plot(gr_rules,method="graph",interactive=T)
+
